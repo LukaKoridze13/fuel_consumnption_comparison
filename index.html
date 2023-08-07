@@ -1,47 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Vite + React + TS</title>
   </head>
   <body>
-    <h1>Car Selector</h1>
-    <label for="yearSelect">Choose a year:</label>
-    <select id="yearSelect">
-      <option value="" disabled selected>Select a year</option>
-    </select>
-    <label for="makeSelect">Choose a manufacturer:</label>
-    <select id="makeSelect" disabled>
-      <option value="" disabled selected>Select a manufacturer</option>
-    </select>
-    <label for="modelSelect">Choose a model:</label>
-    <select id="modelSelect" disabled>
-      <option value="" disabled selected>Select a model</option>
-    </select>
-    <label for="optionsSelect">Choose options:</label>
-    <select id="optionsSelect" disabled>
-      <option value="" disabled selected>Select options</option>
-    </select>
-    <div id="carDataContainer" style="display: none">
-      <h2>Selected Car Data</h2>
-      <img src="" id="car">
-      <p>Year: <span id="selectedYear"></span></p>
-      <p>Manufacturer: <span id="selectedMake"></span></p>
-      <p>Model: <span id="selectedModel"></span></p>
-      <p>Options: <span id="selectedOptions"></span></p>
-      <button id="showConsumptionButton">Show Fuel Consumption</button>
-      <div id="fuelConsumptionContainer" style="display: none">
-        <p>Consumption in city: <span id="cityConsumption"></span></p>
-        <p>
-          Consumption on highway: <span id="highwayConsumption"></span> 
-        </p>
-        <p>
-          Average consumption: <span id="averageConsumption"></span> 
-        </p>
-      </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./requests.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
