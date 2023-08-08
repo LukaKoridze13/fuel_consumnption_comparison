@@ -25,4 +25,9 @@ const Text = styled.h1`
   font-weight: 800;
   color: ${(props) => `rgb(${props.theme.light})`};
   text-transform: uppercase;
+
+  @media (max-width: 1024px) {
+    font-size: 1.6em;
+    font-weight: 600;
+  }
 `;

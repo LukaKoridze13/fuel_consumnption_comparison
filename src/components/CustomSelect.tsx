@@ -11,9 +11,9 @@ interface SelectItem {
 export default function CustomSelect(props: {
   lang: string;
   options: SelectItem[] | null | string;
-  onChange: (arg: {text:string, value:string}) => void;
+  onChange: (arg: { text: string; value: string }) => void;
   placeholder: string;
-  value: {text: string; value: string} | null
+  value: { text: string; value: string } | null;
 }) {
   const languageContext = useContext(LanguageContext);
   const colorsContext = useContext(ColorsContext);
@@ -21,13 +21,17 @@ export default function CustomSelect(props: {
   return (
     <Select
       styles={{
+        container: (baseStyles) => ({
+          ...baseStyles,
+          width: "100%",
+        }),
         control: (baseStyles, state) => ({
           ...baseStyles,
-          width: "280px",
+          width: "100%",
           height: "36px",
-          borderRadius: "100px",
+          borderRadius: "12px",
           backgroundColor: `rgb(${colorsContext.light})`,
-          fontSize: "1.8em",
+          fontSize: window.innerWidth > 1024 ? "1.6em" : "1.2em",
           fontFamily: "Inter",
           cursor: "pointer",
           paddingRight: "10px",
@@ -61,7 +65,7 @@ export default function CustomSelect(props: {
         }),
         menu: (baseStyles) => ({
           ...baseStyles,
-          fontSize: "1.8em",
+          fontSize: "1.4em",
           backgroundColor: `rgb(${colorsContext.dark})`,
         }),
         option: (baseStyles, state) => ({
@@ -75,6 +79,14 @@ export default function CustomSelect(props: {
             backgroundColor: `rgba(${colorsContext.light}, 0.2)`,
           },
           fontFamily: "Inter",
+        }),
+        input: (baseStyles) => ({
+          ...baseStyles,
+          color: `rgb(${colorsContext.dark})`,
+        }),
+        singleValue: (baseStyles) => ({
+          ...baseStyles,
+          color: `rgb(${colorsContext.dark})`,
         }),
       }}
       placeholder={props.placeholder}

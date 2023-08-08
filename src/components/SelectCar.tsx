@@ -156,7 +156,7 @@ const Form = styled.form`
   height: 308px;
   padding: 48px 20px;
   background-color: ${(props) => `rgb(${props.theme.dark})`};
-  border-radius: 32px;
+  border-radius: 16px;
 
   display: flex;
   flex-direction: column;
@@ -164,14 +164,22 @@ const Form = styled.form`
   align-items: center;
   gap: 20px;
 
-  & > span {
-    color: ${(props) => `rgb(${props.theme.light})`};
-    font-size: 3em;
-    text-align: center;
+  position:relative;
+  z-index:10;
+
+  @media (max-width: 1024px) {
+    width:100%;
+    padding: 8px;
+    height: fit-content;
+    gap:8px;
   }
 `;
 
 const Gif = styled.img`
   width: 200px;
   aspect-ratio: 4/3;
+
+  @media (max-width: 1024px) {
+    width: 80%;
+  }
 `;

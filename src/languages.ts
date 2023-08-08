@@ -11,10 +11,10 @@ const languages: Languages = {
     averageGeneral: "წვა 100კმ-ზე",
     costPer1000km: "ხარჯი 1000კმ-ზე",
     liters: "ლიტრი",
-    currency: { name: "ლარი", value: 1 },
+    currency: { name: "₾არი", value: 1 },
   },
   eng: {
-    changeTheme: "Change theme colors",
+    changeTheme: "Change theme",
     chooseYear: "Choose year",
     chooseManufacturer: "Choose manufacturer",
     chooseModel: "Choose model",

@@ -111,7 +111,12 @@ export default function Car(props: { car: CarData }) {
   const languageContext = useContext(LanguageContext);
   const convert = useMpgToLkm;
   const { car } = props;
-  const cost = useRoundUp(Number(convert(Number(car.comb08)))*10*2.65*languageContext.currency.value)
+  const cost = useRoundUp(
+    Number(convert(Number(car.comb08))) *
+      10 *
+      2.65 *
+      languageContext.currency.value
+  );
   return (
     <Box>
       <Top>
@@ -160,11 +165,16 @@ export default function Car(props: { car: CarData }) {
 const Box = styled.div`
   width: 320px;
   border-radius: 16px;
+  @media (max-width: 1024px) {
+    width: 49%;
+    height: 100%;
+    flex-grow: 1;
+  }
 `;
 
 const Top = styled.div`
   width: 100%;
-  padding: 32px 21px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -172,12 +182,17 @@ const Top = styled.div`
   gap: 16px;
   background-color: ${(props) => `rgb(${props.theme.dark})`};
   border-radius: 16px 16px 0px 0px;
+
+  @media (max-width: 1024px) {
+    padding: 8px;
+    gap: 6px;
+  }
 `;
 
 const Text = styled.p`
   font-family: "Inter";
   color: ${(props) => `rgb(${props.theme.light})`};
-  font-size: 2em;
+  font-size: 1.4em;
   font-weight: 400;
   border-bottom: 1px solid ${(props) => `rgb(${props.theme.light})`};
   width: fit-content;
@@ -187,23 +202,27 @@ const Fuel = styled.div`
   width: 100%;
   background-color: ${(props) => `rgba(${props.theme.dark}, 0.5)`};
   border-radius: 0px 0px 16px 16px;
-  padding: 32px 21px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 36px;
+  gap: 22px;
+
+  @media (max-width: 1024px) {
+    padding: 8px;
+    gap: 6px;
+  }
 `;
 
 const Field = styled.div`
   width: 100%;
-  height: 52px;
   padding: 6px 16px;
   background-color: ${(props) => `rgb(${props.theme.dark})`};
   border-radius: 16px;
 
   color: ${(props) => `rgb(${props.theme.light})`};
-  font-size: 1.6em;
+  font-size: 1.4em;
   font-weight: 400;
 
   display: flex;
@@ -212,6 +231,11 @@ const Field = styled.div`
   gap: 8px;
 
   position: relative;
+
+  @media (max-width: 1024px) {
+    padding: 6px 12px;
+    padding-right: 50%;
+  }
 `;
 
 const FieldBox = styled.div`
@@ -221,7 +245,7 @@ const FieldBox = styled.div`
   transform: translateY(-50%);
 
   width: 80px;
-  height: 60px;
+  height: 40px;
   border-radius: 0px 16px 16px 0px;
   border: 2px solid ${(props) => `rgb(${props.theme.dark})`};
   background: ${(props) => `rgb(${props.theme.light})`};
@@ -231,4 +255,12 @@ const FieldBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1024px) {
+    width: 70px;
+    padding: 4px;
+    font-size: 1em;
+    height:100%;
+    border:none;
+  }
 `;

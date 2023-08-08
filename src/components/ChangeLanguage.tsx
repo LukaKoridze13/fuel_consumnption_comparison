@@ -40,7 +40,6 @@ const Parent = styled.div<{ $lang: string }>`
     content: "";
     position: absolute;
     z-index: 2;
-    width: 94px;
     height: 38px;
     border-radius: 32px;
     top: -2px;
@@ -51,6 +50,14 @@ const Parent = styled.div<{ $lang: string }>`
     width: ${(props) => {
       return props.$lang === "ge" ? `94px` : `82px`;
     }};
+    @media (max-width: 1024px) {
+      width: ${(props) => {
+        return props.$lang === "ge" ? `80px` : `64px`;
+      }};
+      left: ${(props) => {
+        return props.$lang === "ge" ? `-2px` : `78px`;
+      }};
+    }
     transition: all 0.1s linear;
   }
   & button:first-child {
@@ -67,6 +74,13 @@ const Parent = styled.div<{ $lang: string }>`
         : `rgb(${props.theme.dark})`;
     }};
   }
+
+  @media (max-width: 1024px) {
+    width: 146px;
+    font-size: 10px;
+    left: 8px;
+    gap: 10px;
+  }
 `;
 
 const Geo = styled.button`
@@ -80,6 +94,10 @@ const Geo = styled.button`
 
   position: relative;
   z-index: 3;
+
+  @media (max-width: 1024px) {
+    padding: 4px;
+  }
 `;
 
 const Eng = styled(Geo)`

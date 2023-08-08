@@ -33,4 +33,13 @@ const Button = styled.button`
   & path {
     fill: ${(props) => `rgb(${props.theme.light})`};
   }
+
+  @media (max-width: 1024px) {
+    transform:none;
+    left:auto;
+    right:8px;
+    font-size: 1.3em;
+    padding-inline: 12px;
+    height:38px;
+  }
 `;

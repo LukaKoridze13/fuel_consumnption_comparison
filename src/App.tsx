@@ -102,19 +102,25 @@ const Container = styled.div<{ $font: string }>`
 
   flex-grow: 1;
   min-height: 0;
+
+  @media (max-width: 1024px) {
+    padding: 8px;
+    padding-bottom: 120px;
+  }
 `;
 
 const Main = styled.main`
   width: 100%;
 
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  margin: 100px 0px;
 
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 50px;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 20px;
+
+  @media (max-width: 1024px) {
+    row-gap: 8px;
+    margin: 20px 0px;
+  }
 `;
